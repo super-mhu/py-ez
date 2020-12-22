@@ -1,0 +1,13 @@
+---
+UserFPCTable:
+  rpc: get-fpc-information
+  item: fpc
+  key: slot
+  view: UserFPCView
+
+UserFPCView:
+  fields:
+    state: state
+    cpu-total: cpu-total
+    memory-heap-utilization: memory-heap-utilization
+    memory-buffer-utilization: memory-buffer-utilization
