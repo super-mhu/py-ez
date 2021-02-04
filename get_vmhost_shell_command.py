@@ -22,7 +22,9 @@ def get_vmhost_shell(dev):
 	
 	'''Different ways to collect host output'''
 	#vmhost_shell = ss.run('cli -c \'request vmhost exec "df -i"\'')
+	###Use ">show interfaces terse routing-instance all" to find out virtual instance and IP to connect to Host OS
 	#vmhost_shell = ss.run('rsh -JU __juniper_private4__ 192.168.1.1 "df -i"')
+	#vmhost_shell = ss.run('rsh -JU __juniper_private5__ 192.168.1.2 "df -i"')
 	vmhost_shell = ss.run('vhclient "df -i"')
 	#print(vmhost_shell)
 	
@@ -40,4 +42,6 @@ if __name__ == '__main__':
 	with Device(host='10.228.30.11',user='root',password='Juniper') as dev:  ###Testing ACX6360 device 
 		print('{:*^50}'.format(' Get vmhost shell info -- shell '))
 		get_vmhost_shell(dev)
+
+
 
